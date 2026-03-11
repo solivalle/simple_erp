@@ -47,5 +47,3 @@ El proyecto presenta múltiples puntos de fricción que dificultan el onboarding
 - Dependencias críticas no documentadas.
 - Configuraciones sensibles hardcodeadas en el código.
 - Pasos fundamentales de Django no descritos.
-
-Para mejorar la experiencia de onboarding, se recomienda crear una guía de instalación completa que describa paso a paso cómo configurar el entorno, instalar dependencias, preparar la base de datos y ejecutar la aplicación.

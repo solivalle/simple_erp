@@ -9,37 +9,7 @@ Faltaban instrucciones claras de instalación, dependencias del sistema no estab
 
 ## What We Built
 
-Para eliminar los bloqueos detectados durante el análisis de fricción se crearon los siguientes artefactos:
-
-**setup.sh**
-
-Script de bootstrap del entorno de desarrollo.  
-Este script verifica que Python esté instalado, crea un entorno virtual, instala las dependencias del proyecto, configura el archivo `.env` y ejecuta las migraciones de Django.
-
-Elimina los siguientes problemas:
-
-- dependencias no instaladas
-- entorno virtual faltante
-- migraciones no ejecutadas
-- archivo `.env` inexistente
-
----
-
-**Makefile**
-
-Archivo que automatiza tareas comunes del proyecto mediante comandos simples.
-
-Incluye comandos como:
-
-- `make setup`
-- `make run`
-- `make clean`
-
-El comando `make setup` instala dependencias, configura variables de entorno, ejecuta migraciones y carga datos iniciales si existen.
-
-Esto reduce significativamente la fricción para nuevos desarrolladores.
-
----
+Para eliminar los bloqueos detectados durante el análisis de fricción se creó el siguiente artefacto:
 
 **docker-compose.yml**
 
@@ -50,7 +20,7 @@ Levanta automáticamente:
 - aplicación Django
 - base de datos PostgreSQL
 
-Esto elimina la necesidad de instalar PostgreSQL manualmente y asegura que todos los desarrolladores utilicen el mismo entorno de ejecución.
+Esto elimina la necesidad de instalar PostgreSQL manualmente y asegura que todos los desarrolladores utilicen el mismo entorno de ejecución. No se agregó ningún artefacto más ya que este eliminaba todas las fricciones y no era posbible agregar un env debido a la estructura del proyecto.
 
 ---
 

@@ -27,7 +27,7 @@ Cada punto está etiquetado según el tipo de fricción detectado.
 
 11. **[MISSING_DOC]** El proyecto incluye el panel de administración de Django, pero no se explica cómo crear un superusuario (`python manage.py createsuperuser`).
 
-12. **[MISSING_DOC]** El README no explica cómo iniciar el servidor de desarrollo usando `python manage.py runserver`.
+12. **[MISSING_DOC]** El README no explica cómo iniciar el servidor usando `python manage.py runserver`.
 
 13. **[MISSING_DOC]** El repositorio contiene archivos de plantilla Excel (`23AKP08_PLANTILLA.xlsx`, `23AKP08PL_PLANTILLA.xlsx`), pero no se explica su propósito ni cómo se utilizan dentro del sistema.
 

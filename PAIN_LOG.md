@@ -17,7 +17,7 @@ Cada punto está etiquetado según el tipo de fricción detectado.
 
 6. **[IMPLICIT_DEP]** El proyecto depende de **PostgreSQL** como base de datos (`django.db.backends.postgresql`), pero el README no menciona que PostgreSQL debe estar instalado.
 
-7. **[IMPLICIT_DEP]** El paquete `psycopg2` requiere dependencias del sistema (por ejemplo `libpq-dev` o `postgresql`), pero estas dependencias no están documentadas.
+7. **[IMPLICIT_DEP]** El paquete `psycopg2` requiere dependencias de postgres (por ejemplo `libpq-dev` o `postgresql`), pero estas dependencias no están documentadas.
 
 8. **[ENV_GAP]** Las credenciales de la base de datos están hardcodeadas en `settings.py` (`NAME=tienda`, `USER=postgres`, `PASSWORD=my_pass`, `HOST=127.0.0.1`, `PORT=5432`). No se documenta que el desarrollador debe crear una base de datos con esa configuración exacta.
 

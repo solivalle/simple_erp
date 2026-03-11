@@ -9,7 +9,7 @@ services:
     environment:
       POSTGRES_DB: tienda
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: my_pass
+      POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
     volumes:
@@ -28,7 +28,7 @@ services:
     environment:
       DB_NAME: tienda
       DB_USER: postgres
-      DB_PASSWORD: my_pass
+      DB_PASSWORD: postgres
       DB_HOST: db
       DB_PORT: 5432
 

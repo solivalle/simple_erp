@@ -47,3 +47,55 @@ El proyecto presenta múltiples puntos de fricción que dificultan el onboarding
 - Dependencias críticas no documentadas.
 - Configuraciones sensibles hardcodeadas en el código.
 - Pasos fundamentales de Django no descritos.
+
+# Friction Analysis Summary – simple_erp
+
+## 1. Total de Friction Points Encontrados
+
+Se identificaron **17 friction points** durante la revisión del proyecto.
+
+Estos problemas pertenecen a varias categorías:
+
+- **[MISSING_DOC]** pasos de configuración que no están documentados  
+- **[IMPLICIT_DEP]** dependencias necesarias que el proyecto asume pero no declara  
+- **[ENV_GAP]** variables de entorno o configuraciones no documentadas  
+- **[VERSION_HELL]** versiones de runtime requeridas pero no especificadas  
+- **[SILENT_FAIL]** procesos que pueden ejecutarse pero el sistema no funciona correctamente  
+
+La mayoría de los problemas están relacionados con **falta de documentación para instalar y ejecutar el proyecto**, lo cual genera fricción para nuevos desarrolladores.
+
+---
+
+## 2. Hasta Dónde se Pudo Avanzar Antes del Primer Bloqueo Completo
+
+Un ingeniero nuevo probablemente podría completar los siguientes pasos:
+
+1. Clonar el repositorio  
+2. Crear un entorno virtual de Python  
+3. Intentar instalar las dependencias del proyecto  
+
+El **primer bloqueo completo** ocurriría al intentar instalar las dependencias con el comando `pip install -r requirements.txt`.
+
+En este punto la instalación puede fallar debido a la dependencia **psycopg2**, que requiere librerías del sistema adicionales que no están documentadas.
+
+Incluso si la instalación funciona, el siguiente bloqueo aparecería al intentar ejecutar el proyecto, ya que el sistema espera una **base de datos PostgreSQL llamada `tienda` con credenciales específicas**, lo cual tampoco está documentado.
+
+---
+
+## 3. Tiempo Estimado Perdido para un Nuevo Desarrollador
+
+Un desarrollador nuevo probablemente perdería **entre 2 y 4 horas** resolviendo problemas de configuración no documentados.
+
+### Desglose aproximado del tiempo
+
+| Tarea | Tiempo estimado |
+|------|------|
+| Identificar que el proyecto usa Django | 10–15 minutos |
+| Resolver problemas con psycopg2 | 30–60 minutos |
+| Instalar y configurar PostgreSQL | 20–40 minutos |
+| Descubrir la configuración requerida de la base de datos | 30–45 minutos |
+| Crear la base de datos `tienda` | 10–20 minutos |
+| Ejecutar migraciones de Django | 15–30 minutos |
+| Iniciar y verificar el servidor de desarrollo | 10–15 minutos |
+
+**Tiempo total estimado perdido:** aproximadamente **2–4 horas** antes de lograr ejecutar el proyecto correctamente.

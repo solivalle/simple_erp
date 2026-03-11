@@ -263,6 +263,29 @@ Paso 2
 make run
 
 ---
+# Tabla de resoluciones de pain points
+
+| Pain Point # | Descripción del Problema | Artefacto que lo soluciona | Estado |
+|---|---|---|---|
+| 1 | README sin instrucciones básicas de inicio. | setup.sh / Makefile | Fixed |
+| 2 | No se menciona que el proyecto es Django. | setup.sh / docker-compose.yml | Fixed |
+| 3 | No se especifica la versión de Python requerida. | setup.sh | Partial (Verifica python3 pero no versión exacta) |
+| 4 | Falta documentación sobre el entorno virtual. | setup.sh / Makefile | Fixed |
+| 5 | No se documenta pip install -r requirements.txt. | setup.sh / Makefile | Fixed |
+| 6 | Dependencia de PostgreSQL no mencionada. | docker-compose.yml | Fixed |
+| 7 | Dependencias de sistema para psycopg2. | setup.sh | Partial (Advierte sobre psql pero no instala libpq-dev) |
+| 8 | Credenciales de DB hardcodeadas en settings. | docker-compose.yml / .env | Fixed |
+| 9 | Creación manual de la base de datos tienda. | docker-compose.yml | Fixed |
+| 10 | Ejecución de migraciones no documentada. | setup.sh / Makefile | Fixed |
+| 11 | Creación de superusuario no explicada. | N/A | Out of Scope |
+| 12 | Instrucciones para ejecutar el servidor (runserver). | Makefile / setup.sh | Fixed |
+| 13 | Propósito de plantillas Excel no explicado. | N/A | Out of Scope |
+| 14 | Uso de openpyxl no documentado. | setup.sh (vía requirements.txt) | Fixed |
+| 15 | Manejo de archivos estáticos (collectstatic). | N/A | Out of Scope |
+| 16 | SECRET_KEY hardcodeada en código fuente. | .env (vía setup.sh / Makefile) | Fixed |
+| 17 | Inclusión de carpeta .git en el comprimido. | Makefile (vía comando clean) | Partial |
+
+---
 
 # Resultado
 

@@ -11,7 +11,7 @@ Cada punto está etiquetado según el tipo de fricción detectado.
 
 3. **[VERSION_HELL]** No se especifica la versión de Python requerida. El proyecto usa `Django==4.2.2`, que requiere Python ≥ 3.8, pero esto no se menciona en la documentación.
 
-4. **[MISSING_DOC]** No se documenta la creación de un entorno virtual para aislar las dependencias del proyecto.
+4. **[MISSING_DOC]** El proyecto no explica que deberías crear un entorno virtual de Python antes de instalar dependencias, lo cual es una práctica estándar en casi todos los proyectos Python.
 
 5. **[MISSING_DOC]** No se documenta el comando necesario para instalar las dependencias del proyecto usando el archivo `requirements.txt`.
 

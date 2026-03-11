@@ -13,7 +13,7 @@ Cada punto está etiquetado según el tipo de fricción detectado.
 
 4. **[MISSING_DOC]** El proyecto no explica que deberías crear un entorno virtual de Python antes de instalar dependencias, lo cual es una práctica estándar en casi todos los proyectos Python.
 
-5. **[MISSING_DOC]** No se documenta el comando necesario para instalar las dependencias del proyecto usando el archivo `requirements.txt`.
+5. **[MISSING_DOC]** No se documenta el comando necesario para instalar las dependencias del proyecto usando el archivo `requirements.txt` (pip install -r requirements.txt).
 
 6. **[IMPLICIT_DEP]** El proyecto depende de **PostgreSQL** como base de datos (`django.db.backends.postgresql`), pero el README no menciona que PostgreSQL debe estar instalado.
 

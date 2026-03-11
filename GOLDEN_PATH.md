@@ -265,25 +265,25 @@ make run
 ---
 # Tabla de resoluciones de pain points
 
-| Pain Point # | Descripción del Problema | Artefacto que lo soluciona | Estado |
+| # | Pain Point (Descripción) | Solución con Docker | Estado |
 |---|---|---|---|
-| 1 | README sin instrucciones básicas de inicio. | setup.sh / Makefile | Fixed |
-| 2 | No se menciona que el proyecto es Django. | setup.sh / docker-compose.yml | Fixed |
-| 3 | No se especifica la versión de Python requerida. | setup.sh | Partial (Verifica python3 pero no versión exacta) |
-| 4 | Falta documentación sobre el entorno virtual. | setup.sh / Makefile | Fixed |
-| 5 | No se documenta pip install -r requirements.txt. | setup.sh / Makefile | Fixed |
-| 6 | Dependencia de PostgreSQL no mencionada. | docker-compose.yml | Fixed |
-| 7 | Dependencias de sistema para psycopg2. | setup.sh | Partial (Advierte sobre psql pero no instala libpq-dev) |
-| 8 | Credenciales de DB hardcodeadas en settings. | docker-compose.yml / .env | Fixed |
-| 9 | Creación manual de la base de datos tienda. | docker-compose.yml | Fixed |
-| 10 | Ejecución de migraciones no documentada. | setup.sh / Makefile | Fixed |
-| 11 | Creación de superusuario no explicada. | N/A | Out of Scope |
-| 12 | Instrucciones para ejecutar el servidor (runserver). | Makefile / setup.sh | Fixed |
-| 13 | Propósito de plantillas Excel no explicado. | N/A | Out of Scope |
-| 14 | Uso de openpyxl no documentado. | setup.sh (vía requirements.txt) | Fixed |
-| 15 | Manejo de archivos estáticos (collectstatic). | N/A | Out of Scope |
-| 16 | SECRET_KEY hardcodeada en código fuente. | .env (vía setup.sh / Makefile) | Fixed |
-| 17 | Inclusión de carpeta .git en el comprimido. | Makefile (vía comando clean) | Partial |
+| 1 | README sin instrucciones básicas de inicio. | Se reduce a un solo comando: `docker compose up`. | Fixed |
+| 2 | No menciona que el proyecto usa Django. | Evidente al ver el Dockerfile (Python) y el comando de ejecución. | Fixed |
+| 3 | Versión de Python no especificada. | El Dockerfile define la imagen base exacta (ej. `python:3.10-slim`). | Fixed |
+| 4 | Creación de entorno virtual no documentada. | Los contenedores son entornos aislados por diseño; no se requiere `venv`. | Fixed |
+| 5 | Comando `pip install` no documentado. | La instalación ocurre automáticamente durante el `docker build`. | Fixed |
+| 6 | Dependencia de PostgreSQL no mencionada. | El servicio `db` en `docker-compose.yml` provee la base de datos automáticamente. | Fixed |
+| 7 | Dependencias de sistema para psycopg2. | Se incluyen en el Dockerfile mediante `apt-get install libpq-dev` antes del build. | Fixed |
+| 8 | Credenciales hardcodeadas en `settings.py`. | Se inyectan mediante variables de `environment` en el Compose. | Fixed |
+| 9 | Creación manual de la base de datos `tienda`. | `POSTGRES_DB: tienda` en el Compose la crea al arrancar el contenedor. | Fixed |
+| 10 | Ejecución de migraciones no documentada. | El comando de inicio (`command`) ejecuta `python manage.py migrate` automáticamente. | Fixed |
+| 11 | Creación de superusuario no explicada. | Simplificado mediante `docker compose exec web python manage.py createsuperuser`. | Fixed |
+| 12 | Instrucciones para iniciar el servidor. | Gestionado por la instrucción `command` en el servicio `web`. | Fixed |
+| 13 | Propósito de plantillas Excel no explicado. | Aunque se incluyen en el contenedor, su lógica de negocio sigue requiriendo manual. | Partial |
+| 14 | Uso de `openpyxl` no documentado. | Se instala automáticamente como dependencia en la imagen de Docker. | Fixed |
+| 15 | Manejo de archivos estáticos. | El Dockerfile puede ejecutar `collectstatic` durante la construcción de la imagen. | Fixed |
+| 16 | `SECRET_KEY` hardcodeada. | Se define como variable de entorno en el archivo de configuración de Docker. | Fixed |
+| 17 | Carpeta `.git` incluida en el despliegue. | El archivo `.dockerignore` excluye `.git` para que no contamine la imagen. | Fixed |
 
 ---
 

@@ -100,3 +100,20 @@ Estos artefactos eliminan los principales bloqueos detectados en el proyecto:
 
 No se utilizó otro artefacto adicional (como .env.example) debido a que el proyecto no cuenta con variables de entorno, sino con valores hardcodeados que tuvieron que ser agregados en el dockerfile para poder ejecutar el proyecto.
 
+# Application Startup and Homepage
+
+Este documento muestra el estado de la aplicación durante el arranque y el resultado final al acceder al homepage.
+
+## Startup
+
+La siguiente imagen muestra los logs o el proceso de arranque de la aplicación.
+
+![Application Startup](./startup.png)
+
+---
+
+## Homepage
+
+La siguiente imagen muestra la página principal de la aplicación una vez que el sistema está corriendo correctamente.
+
+![Application Homepage](./homepage.png)

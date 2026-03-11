@@ -162,14 +162,6 @@ Esto crea las tablas necesarias en PostgreSQL.
 
 ---
 
-### Paso 4 – seed
-
-Si el proyecto incluye datos iniciales, se cargan automáticamente.
-
-python manage.py loaddata initial_data.json
-
----
-
 ## Otros comandos útiles
 
 Ejecutar el servidor:
